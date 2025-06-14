@@ -1,0 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 52 94% 94%;
+    --foreground: 88 38% 15%;
+
+    --card: 52 94% 94%;
+    --card-foreground: 88 38% 15%;
+
+    --popover: 52 94% 94%;
+    --popover-foreground: 88 38% 15%;
+
+    --primary: 74 32% 32%;
+    --primary-foreground: 52 94% 94%;
+
+    --secondary: 28 67% 44%;
+    --secondary-foreground: 52 94% 94%;
+
+    --muted: 32 65% 62%;
+    --muted-foreground: 88 38% 15%;
+
+    --accent: 32 65% 62%;
+    --accent-foreground: 88 38% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 52 94% 94%;
+
+    --border: 32 65% 62%;
+    --input: 74 32% 32%;
+    --ring: 28 67% 44%;
+
+    --radius: 0.5rem;
+
+    --dark-moss-green: hsla(74, 32%, 32%, 1);
+    --pakistan-green: hsla(88, 38%, 15%, 1);
+    --cornsilk: hsla(52, 94%, 94%, 1);
+    --earth-yellow: hsla(32, 65%, 62%, 1);
+    --tigers-eye: hsla(28, 67%, 44%, 1);
+
+    --sidebar-background: 52 94% 94%;
+    --sidebar-foreground: 88 38% 15%;
+    --sidebar-primary: 74 32% 32%;
+    --sidebar-primary-foreground: 52 94% 94%;
+    --sidebar-accent: 32 65% 62%;
+    --sidebar-accent-foreground: 88 38% 15%;
+    --sidebar-border: 74 32% 32%;
+    --sidebar-ring: 28 67% 44%;
+  }
+
+  .dark {
+    --background: 88 38% 15%;
+    --foreground: 52 94% 94%;
+
+    --card: 88 38% 15%;
+    --card-foreground: 52 94% 94%;
+
+    --popover: 88 38% 15%;
+    --popover-foreground: 52 94% 94%;
+
+    --primary: 74 32% 32%;
+    --primary-foreground: 52 94% 94%;
+
+    --secondary: 32 65% 62%;
+    --secondary-foreground: 52 94% 94%;
+
+    --muted: 32 65% 62%;
+    --muted-foreground: 52 94% 94%;
+
+    --accent: 32 65% 62%;
+    --accent-foreground: 52 94% 94%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 52 94% 94%;
+
+    --border: 74 32% 32%;
+    --input: 28 67% 44%;
+    --ring: 32 65% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+
+  .card-shadow {
+    @apply shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-pakistan to-dark-moss text-transparent bg-clip-text;
+  }
+
+  .icon-border {
+    @apply border border-tiger rounded-full p-2 hover:bg-tiger hover:text-cornsilk transition-all duration-300;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .flip-card-inner {
+    @apply relative w-full h-full transition-transform duration-500 preserve-3d;
+  }
+
+  .flip-card-front, .flip-card-back {
+    @apply absolute w-full h-full backface-hidden;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+}
